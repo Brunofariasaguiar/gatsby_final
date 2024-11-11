@@ -21,7 +21,15 @@
   margin-top: 10px;
   background-color: #e6e6e8;
   border-radius: 8px;
+}
+
+.main .center {
   text-align: center;
+}
+
+.main .justificado {
+  text-align: justify;
+  display: block;
 }
 
 .topnav {

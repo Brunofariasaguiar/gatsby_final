@@ -7,7 +7,7 @@ const IndexPage = ({ children }) => {
     <Layout>
       <h1>Posts da Aulas de Gatsby</h1>
       <hr />
-      <h3 className="supernatural">{children}Ha Estrada Ate Aqui</h3>
+      <h2 className="supernatural center">{children}A Estrada Até Aqui</h2>
     </Layout>
   );
 };

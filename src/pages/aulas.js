@@ -24,8 +24,8 @@ const AulasPage = () => {
       <h1>Aulas</h1>
       {data.allMdx.nodes.map((node) => (
         <article key={node.id}>
-          <h2>
-            <Link to={`/blog/${node.frontmatter.slug}`}>
+          <h2 className="center">
+            <Link to={`/${node.frontmatter.slug}`}>
               {node.frontmatter.title}
             </Link>
           </h2>
