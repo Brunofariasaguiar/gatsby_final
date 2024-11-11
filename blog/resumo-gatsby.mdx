@@ -1,0 +1,61 @@
+---
+title: "Resumo do Gatsby"
+date: "2024-11-10"
+slug: "resumo-gatsby"
+---
+
+# Introdução ao Gatsby
+
+Gatsby é um framework **React** focado em **desenvolvimento de sites estáticos** com alta performance. Ele facilita a criação de páginas otimizadas, seguras e rápidas, utilizando o conceito de **SSG** (Static Site Generation) e outras técnicas modernas de desenvolvimento.
+
+## Principais Características
+
+### 1. **Baseado em React**
+
+- Utiliza **React** para criar interfaces de usuário dinâmicas.
+- A vantagem é que os desenvolvedores que já conhecem React podem reutilizar esse conhecimento.
+
+### 2. **GraphQL**
+
+- Gatsby utiliza **GraphQL** para buscar dados de qualquer fonte (APIs, CMSs, arquivos locais, etc.).
+- Isso permite que os desenvolvedores façam consultas de dados eficientes diretamente nas páginas e componentes.
+
+### 3. **Plugins e Ecosistema**
+
+- Gatsby possui um ecossistema vasto de **plugins** e **starters** que podem ser usados para integrar funcionalidades rapidamente.
+- Exemplos incluem plugins para fontes de dados (WordPress, Contentful), imagens otimizadas, SEO, e muito mais.
+
+### 4. **Performance Otimizada**
+
+- **Imagens otimizadas automaticamente**: Gatsby redimensiona e gera diferentes formatos de imagem, permitindo carregamento progressivo e lazy loading.
+- **Pre-fetching**: Páginas futuras são carregadas em segundo plano para melhorar a experiência de navegação.
+- **SSR e DSG**: Além de SSG, Gatsby oferece suporte para **Server-Side Rendering (SSR)** e **Deferred Static Generation (DSG)** para maior flexibilidade.
+
+### 5. **Headless CMS**
+
+- Gatsby é uma excelente escolha para projetos com um **Headless CMS**. Ele se conecta facilmente a APIs e permite que o conteúdo seja gerado e atualizado com grande facilidade.
+
+### 6. **PWA (Progressive Web App)**
+
+- Gatsby permite que os sites gerados funcionem como **PWAs**, o que significa que podem ser instalados como aplicativos e funcionam offline.
+
+## Vantagens do Gatsby
+
+- **Velocidade**: Sites são servidos como arquivos estáticos, tornando-os extremamente rápidos.
+- **SEO-friendly**: O carregamento rápido e o controle sobre os metadados proporcionam boa otimização para motores de busca.
+- **Segurança**: Como não há servidor dinâmico envolvido, é mais difícil de ser atacado por vulnerabilidades comuns.
+- **Experiência do usuário**: A navegação é fluida graças ao pre-fetching de páginas e otimização de recursos.
+
+## Casos de Uso
+
+- **Blogs**: Com suporte a markdown, integração fácil com CMSs como Contentful, Strapi e WordPress.
+- **Portfólios**: Exibição rápida e responsiva de imagens e conteúdo estático.
+- **E-commerce**: Gatsby pode ser usado para construir lojas online rápidas e integradas com plataformas headless de e-commerce.
+
+## Exemplo de Comando para Iniciar um Projeto Gatsby
+
+```bash
+npx gatsby new my-gatsby-site
+cd my-gatsby-site
+gatsby develop
+```
