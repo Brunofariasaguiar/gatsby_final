@@ -22,16 +22,6 @@ const AulasPage = () => {
   return (
     <Layout>
       <h1>Aulas</h1>
-      {data.allMdx.nodes.map((node) => (
-        <article key={node.id}>
-          <h2 className="center">
-            <Link to={`/${node.frontmatter.slug}`}>
-              {node.frontmatter.title}
-            </Link>
-          </h2>
-          <p>Posted: {node.frontmatter.date}</p>
-        </article>
-      ))}
     </Layout>
   );
 };

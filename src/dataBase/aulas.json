@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "titulo": "Introdução ao JavaScript",
+    "sobre": "Uma introdução básica ao JavaScript, cobrindo os fundamentos.",
+    "responsavel": "João Silva",
+    "linkDeApoio": "https://example.com/intro-js"
+  },
+  {
+    "id": 2,
+    "titulo": "React Avançado",
+    "sobre": "Explorando hooks, context API e otimizações em React.",
+    "responsavel": "Maria Souza",
+    "linkDeApoio": "https://example.com/react-advanced"
+  }
+]
