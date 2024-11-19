@@ -1,36 +1,36 @@
-export const {
+const {
   listarAulas,
   adicionarAula,
   editarAula,
   excluirAula,
 } = require("./src/utils/crudAulas");
 
-exports.onCreateDevServer = ({ app }) => {
-  // Listar aulas
-  app.get("/api/aulas", (req, res) => {
-    const aulas = listarAulas();
-    res.json(aulas);
-  });
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
 
-  // Adicionar uma nova aula
-  app.post("/api/aulas", (req, res) => {
-    const novaAula = req.body;
-    adicionarAula(novaAula);
-    res.status(201).json({ message: "Aula criada com sucesso!" });
-  });
+  // Exemplo de como listar todas as aulas
+  const aulas = await listarAulas();
+  console.log(aulas); // Exibe as aulas no console para verificar
 
-  // Editar uma aula existente
-  app.put("/api/aulas/:id", (req, res) => {
-    const id = parseInt(req.params.id);
-    const aulaAtualizada = req.body;
-    editarAula(id, aulaAtualizada);
-    res.json({ message: "Aula atualizada com sucesso!" });
-  });
+  // Exemplo de como adicionar uma aula
+  const novaAula = {
+    id: 3,
+    titulo: "Nova Aula",
+    descricao: "Descrição da Nova Aula",
+    responsavel: "Responsável 3",
+    link: "https://novo-exemplo.com",
+  };
+  await adicionarAula(novaAula);
 
-  // Excluir uma aula
-  app.delete("/api/aulas/:id", (req, res) => {
-    const id = parseInt(req.params.id);
-    excluirAula(id);
-    res.json({ message: "Aula excluída com sucesso!" });
-  });
+  // Exemplo de como editar uma aula
+  const aulaEditada = {
+    titulo: "Aula Editada",
+    descricao: "Descrição da Aula Editada",
+    responsavel: "Responsável Editado",
+    link: "https://exemplo-editado.com",
+  };
+  await editarAula(2, aulaEditada);
+
+  // Exemplo de como excluir uma aula
+  await excluirAula(3);
 };

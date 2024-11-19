@@ -6,7 +6,10 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 const IndexPage = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
-      allMdx(sort: { frontmatter: { date: DESC } }) {
+      allMdx(
+        sort: { frontmatter: { date: DESC } }
+        filter: { frontmatter: { title: { eq: "Resumo do Gatsby" } } }
+      ) {
         nodes {
           frontmatter {
             title

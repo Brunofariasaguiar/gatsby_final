@@ -1,27 +1,10 @@
-import React from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
 
 const AulasPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMdx(sort: { frontmatter: { date: DESC } }) {
-        nodes {
-          frontmatter {
-            date(formatString: "DD/MM/YYYY")
-            title
-            slug
-          }
-          id
-          excerpt
-        }
-      }
-    }
-  `);
-
   return (
     <Layout>
-      <h1>Aulas</h1>
+      <h1>Gerenciar Aulas</h1>
     </Layout>
   );
 };
