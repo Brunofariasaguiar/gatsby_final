@@ -1,11 +1,38 @@
-.layout {
+/* Fontes e Globais */
+body {
   font-family: Arial, Helvetica, Supernatural Knight, sans-serif;
+  background-color: #f4f7fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@font-face {
+  font-family: "Supernatural Knight";
+  src: url("../fonts/Supernatural_Knight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h2,
+h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Layout Principal */
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
   width: 100%;
   height: 95vh;
-  display: grid;
-  grid: "header" auto "main" 1fr "footer" auto / 1fr;
   background-color: #f9fafb;
-  border-radius: 5px;
 }
 
 .header {
@@ -17,82 +44,172 @@
 
 .main {
   grid-area: main;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  grid-area: footer;
+  text-align: center;
   padding: 10px;
-  margin-top: 10px;
   background-color: #e6e6e8;
   border-radius: 8px;
 }
 
-.main .center {
-  text-align: center;
-}
-
-.main .justificado {
-  text-align: justify;
-  display: block;
-}
-
+/* Navegação Superior */
 .topnav {
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
   background-color: #8fdab0;
+  padding: 10px;
 }
 
 .topnav a {
-  float: left;
-  display: block;
+  margin: 0 10px;
   color: black;
-  text-align: center;
-  padding: 14px 16px;
-  border-radius: 5px;
   text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .topnav a:hover {
   background-color: #ea9999;
-  color: black;
+  transform: scale(1.1);
 }
 
-.post {
-  background-color: #eee;
-  margin: 0.5rem;
-  padding: 0.5rem;
-}
-
-.conteiner {
+/* Formulários */
+.form-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  height: 48vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #2575fc;
+}
+
+button {
+  width: 100%;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  transform: scale(1.02);
+}
+
+/* Álbuns */
+.album {
+  background-color: #fff;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
+.albums {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 32px 16px;
+  gap: 16px;
+}
+
+/* Paginação */
 .pagination {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   list-style: none;
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.pagination li {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #f7f7f7;
   cursor: pointer;
-  width: 40%;
-  align-items: center;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.pagination a {
-  padding: 10px;
-  border-radius: 5px;
-  border: 2px solid #2e8b57;
+.pagination li:hover {
+  background-color: #d6e4ff;
+  transform: scale(1.1);
 }
 
-.item_active {
+.pagination .item_active {
+  background-color: #4a90e2;
+  color: white;
   font-weight: bold;
 }
 
-@font-face {
-  font-family: "Supernatural Knight";
-  src: url("../fonts/Supernatural_Knight.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+@media (max-width: 768px) {
+  form {
+    padding: 1.5rem;
+  }
 
-.supernatural {
-  font-family: Supernatural Knight;
-  justify-content: center;
-  align-items: center;
-  color: red;
+  .pagination li {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .topnav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
